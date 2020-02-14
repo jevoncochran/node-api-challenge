@@ -12,3 +12,28 @@ I need this code, but don't know where, perhaps should make some middleware, don
 
 Go code!
 */
+
+const express = require('express');
+
+// routers
+const projectRouter = require('./routers/projectRouter');
+const actionRouter = require('./routers/actionRouter');
+
+const server = express();
+
+// middleware
+server.use(express.json());
+server.use('/api/projects', projectRouter);
+server.use('/api/actions', actionRouter);
+
+server.get('/', (req, res) => {
+    res.send(`
+    <h2>Welcome to the Lambda Node API Sprint Challenge</h>
+    <p>Good luck!</p>
+  `);
+})
+
+const port = 5000;
+server.listen(port, () => {
+    console.log(`\n*** Server running on http://localhost:${port} ***\n`);
+})

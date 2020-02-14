@@ -22,6 +22,17 @@ router.post('/', (req, res) => {
     } 
 })
 
+router.get('/', (req, res) => {
+    projects.get()
+        .then(list => {
+            res.status(200).json(list);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({ errorMessage: 'unable to retrieve projects' });
+        })
+})
+
 router.get('/:id', (req, res) => {
     const { id } = req.params;
     projects.get(id)

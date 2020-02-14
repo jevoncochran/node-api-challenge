@@ -40,13 +40,23 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+servers and routers
+
 - [ ] Describe Middleware?
+
+middleware allows you to run specified functions on specified servers, routers or specific server functions
 
 - [ ] Describe a Resource?
 
+Resources is the data that the server returns back to the client. For example, in this sprint exercise, the resources are projects and actions.
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+You can return any object retrieved, saved, or updated. The server can also be set up to log success on the console, often achieving this with the use of middleware.
+
 - [ ] How can we partition our application into sub-applications?
+
+through routing like I have done in this project by breaking up all the relevant API resources into two different routers--one called the actionRouter and the other being the projectRouter
 
 ## Minimum Viable Product
 
